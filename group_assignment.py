@@ -53,7 +53,7 @@ import os
 from pathlib import Path
 from scipy import stats
 
-df = pd.read_excel('marketing_campaign.xlsx')
+df = pd.read_csv('ifood_df.csv')
 df.head(100)
 
 # Check data type
@@ -80,7 +80,7 @@ for feature in ['Education', 'Marital_Status']:
     print(feature, len(feature_unique), 'unique values are:', feature_unique)
 
 # Plotting histograms for each categorical feature
-fig, axes = plt.subplots(nrows=1, ncols=2, figsize=(12, 6))  # Adjust size as needed
+fig, axes = plt.subplots(nrows=1, ncols=2, figsize=(12, 6))
 
 for index, feature in enumerate(['Education', 'Marital_Status']):
     df[feature].value_counts().plot(kind='bar', ax=axes[index], title=feature)
@@ -101,7 +101,7 @@ print("Unique values in 'Education':", df['Education'].unique())
 print("Unique values in 'Marital_Status':", df['Marital_Status'].unique())
 
 # Plotting histograms for each categorical feature
-fig, axes = plt.subplots(nrows=1, ncols=2, figsize=(12, 6))  # Adjust size as needed
+fig, axes = plt.subplots(nrows=1, ncols=2, figsize=(12, 6))
 
 for index, feature in enumerate(['Education', 'Marital_Status']):
     df[feature].value_counts().plot(kind='bar', ax=axes[index], title=feature)
